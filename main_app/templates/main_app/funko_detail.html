@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Funko Details</h1>
+
+
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ funko.name }}</span>
+    <p>Associated With: {{ funko.association }}</p>
+    <p>Series: {{funko.series}}
+    <p>Number: {{funko.number }}</p>
+  </div>
+  
+  <div class="card-action">
+    <a href="{% url 'funko_update' funko.id %}">Edit</a>
+    <a href="{% url 'funko_delete' funko.id %}">Delete</a>
+  </div>
+</div>
+<p class =  "center-align"><img src="{{funko.image}}" alt=""></p>
+{% if user.is_authenticated %}
+<div class="row">
+    <div class="col s9">
+      <form action="{% url 'add_to_collection' funko.id profile.id %}" method = "POST">
+        {% csrf_token %}
+        <input type="submit" value="Add Funko To Personal Collection" class="btn">
+      </form> 
+    </div>
+    <div class="col 3" class="right-align"> 
+      <form action="" method = "POST">
+        {% csrf_token %}
+        <input type="submit" value="Add Funko To Wishlist" class="btn">
+      </form>
+    </div>
+</div>
+{%endif%}
+
+{% endblock %}
