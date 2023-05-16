@@ -11,6 +11,7 @@ urlpatterns = [
     path('funko/<int:pk>/delete', views.FunkoDelete.as_view(), name= 'funko_delete'),
     path('accounts/signup/', views.signup, name='signup'),
     path('funko/<int:funko_id>/add_to_collection/<int:profile_id>/', views.add_to_collection, name='add_to_collection'),
-    path('profile/', views.profile, name="profile")
+    path('funko/<int:funko_id>/add_to_wishlist/<int:profile_id>/', views.add_to_wishlist, name='add_to_wishlist'),
+    path('profile/', views.profile, name="profile"),
     # path('funko/<int:pk>/add_review/', views.add_review, name='add_review')
 ]

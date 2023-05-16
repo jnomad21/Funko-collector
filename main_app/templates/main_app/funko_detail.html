@@ -2,6 +2,13 @@
 {% block content %}
 
 <h1>Funko Details</h1>
+{% if funko in user.profile.collection.all %}
+  <h3>Part of Collection</h3>
+{%endif%}
+
+{% if funko in user.profile.wishlist.all %}
+  <h3>On My Wishlist</h3>
+{%endif%}
 
 
 <div class="card">
@@ -21,13 +28,13 @@
 {% if user.is_authenticated %}
 <div class="row">
     <div class="col s9">
-      <form action="{% url 'add_to_collection' funko.id profile.id %}" method = "POST">
+      <form action="{% url 'add_to_collection' funko.id user.id %}" method = "POST">
         {% csrf_token %}
         <input type="submit" value="Add Funko To Personal Collection" class="btn">
       </form> 
     </div>
     <div class="col 3" class="right-align"> 
-      <form action="" method = "POST">
+      <form action="{% url 'add_to_wishlist' funko.id user.id %}" method = "POST">
         {% csrf_token %}
         <input type="submit" value="Add Funko To Wishlist" class="btn">
       </form>

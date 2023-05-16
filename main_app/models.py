@@ -23,10 +23,10 @@ class Profile(models.Model):
     collection = models.ManyToManyField(Funko, related_name="collection_profiles", symmetrical=False, blank=True)
     wishlist = models.ManyToManyField(Funko, related_name="wishlist_profiles", symmetrical=False, blank=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    funko = models.ManyToManyField(Funko, related_name='funko_profiles', symmetrical=False, blank=True)
+    
 
     def __str__(self):
-        return self.user
+        return str(self.user)
 
 #Create profile when new user signs up
 def create_profile(sender, instance, created, **kwargs):

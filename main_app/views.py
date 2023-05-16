@@ -34,13 +34,7 @@ class FunkoDetail(DetailView):
     context = super().get_context_data(**kwargs)
     # context["review_form"] = review_form
     return context
-# def add_review(request, pk):
-#   form=ReviewForm(request.POST)
-#   if form.is_valid():
-#     new_review=form.save(commit=False)
-#     new_review.funko_id=pk
-#     new_review.save()
-#   return redirect('funko_detail', pk=pk)
+
 def signup(request):
   error_message = ''
   if request.method == 'POST':
@@ -59,11 +53,18 @@ def signup(request):
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
+
 def add_to_collection(request, funko_id, profile_id):
-  Profile.objects.get(id=profile_id).funko.add(funko_id)
-  return redirect('funko_detail', profile_id=profile_id)
+  Profile.objects.get(id=profile_id).collection.add(funko_id)
+  return redirect('/funko/', funko_id, profile_id,)
+
+def add_to_wishlist(request, funko_id, profile_id):
+  Profile.objects.get(id=profile_id).wishlist.add(funko_id)
+  return redirect('/funko/', funko_id, profile_id,)
+
 def profile(request):
-  return render(request, 'profile.html')
+  profile = Profile.objects
+  return render(request, 'profile.html', {profile:profile} )
 
 # def load_json_file():
 #     with open('funko_pop.json', 'r') as file:
@@ -77,5 +78,13 @@ def profile(request):
 
 #         funko = Funko(handle=handle, image=image, title=title, series=series)
 #         funko.save()
+
+# def add_review(request, pk):
+#   form=ReviewForm(request.POST)
+#   if form.is_valid():
+#     new_review=form.save(commit=False)
+#     new_review.funko_id=pk
+#     new_review.save()
+#   return redirect('funko_detail', pk=pk)
         
 

@@ -19,8 +19,8 @@
   {% if user.is_authenticated %}
     <li><a href="{% url 'about' %}">About</a></li>
     <li><a href="{% url 'funko_index' %}">View Collection</a></li>
-    <li><a href="{% url 'profile' %}">My Profile</a></li>
-    <li><a href="{% url 'funko_create' %}">Add a Funko</a></li> 
+    <li><a href="{% url 'funko_create' %}">Add a Funko</a></li>
+    <li><a href="{% url 'profile' %}">My Profile</a></li> 
     <li><a href="{% url 'logout' %}">Log Out</a></li>
   {% else %}
     <li><a href="{% url 'login' %}">Log In</a></li>
