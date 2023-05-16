@@ -2,18 +2,17 @@
 {% block content %}
 
 <h1>Funko Details</h1>
-{% if funko in user.profile.collection.all %}
-  <h3>Part of Collection</h3>
-{%endif%}
-
-{% if funko in user.profile.wishlist.all %}
-  <h3>On My Wishlist</h3>
-{%endif%}
-
 
 <div class="card">
   <div class="card-content">
     <span class="card-title">{{ funko.name }}</span>
+      <div class="right">
+    {% if funko in user.profile.collection.all %}
+      <h5>In My Collection</h5>
+    {% elif funko in user.profile.wishlist.all %}
+      <h5>On My Wishlist</h5>   
+    {%endif%}
+      </div>
     <p>Associated With: {{ funko.association }}</p>
     <p>Series: {{funko.series}}
     <p>Number: {{funko.number }}</p>
@@ -24,7 +23,7 @@
     <a href="{% url 'funko_delete' funko.id %}">Delete</a>
   </div>
 </div>
-<p class =  "center-align"><img src="{{funko.image}}" alt=""></p>
+<p class =  "center-align"><img class = "detail-image" src="{{funko.image}}" alt=""></p>
 {% if user.is_authenticated %}
 <div class="row">
     <div class="col s9">

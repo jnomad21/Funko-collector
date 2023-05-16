@@ -1,19 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1 id='bravo'>My Wishlist</h1>
+<h1>My Collection</h1>
 
  
 {%for funko in user.profile.wishlist.all%} 
 <div class="row" >
     <div class="col s2" class = "alpha">
         <div class="cards">
-        {{funko.name}}
-        <img src="{{funko.image}}" alt=""width="170" height="170">
+            <a href="{% url 'funko_detail' funko.id %}">{{funko.name}}
+                <a href="{% url 'funko_detail' funko.id %}"><img src="{{funko.image}}" alt=""width="170" height="170">
         </div>
     </div> 
 </div>
-
 {%endfor%}
-
 {% endblock %}
