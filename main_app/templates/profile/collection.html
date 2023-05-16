@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 id='bravo'>My Collection</h1>
+
+ 
+{%for funko in user.profile.collection.all%} 
+<div class="row" >
+    <div class="col s2" class = "alpha">
+        <div class="cards">
+        {{funko.name}}
+        <img src="{{funko.image}}" alt=""width="170" height="170">
+        </div>
+    </div> 
+</div>
+
+{%endfor%}
+
+{% endblock %}

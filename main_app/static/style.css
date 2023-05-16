@@ -12,3 +12,29 @@ body {
     padding-top: 0;
     text-align: right;
   }
+.alpha{
+  display:inline;
+}
+#bravo{
+  color: green
+}
+#funk{
+  position:absolute;
+  z-index: -1;
+  width: 82%;
+  background-position: center;
+  opacity: 20%;
+  left: 10%
+}
+.card{
+  opacity: 80%;
+}
+.card-content p{
+  color: black;
+}
+header .nav-wrapper{
+  background-color: lightskyblue;
+}
+.navbar-fixed{
+  color: lightskyblue;
+}

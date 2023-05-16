@@ -62,6 +62,12 @@ def add_to_wishlist(request, funko_id, profile_id):
   Profile.objects.get(id=profile_id).wishlist.add(funko_id)
   return redirect('/funko/', funko_id, profile_id,)
 
+def profile_collection(request):
+  return render(request, 'profile/collection.html')
+
+def profile_wishlist(request):
+  return render(request, 'profile/wishlist.html')
+
 def profile(request):
   profile = Profile.objects
   return render(request, 'profile.html', {profile:profile} )

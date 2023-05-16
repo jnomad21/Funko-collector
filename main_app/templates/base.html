@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Funko Collector</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
   <header class="navbar-fixed">
@@ -18,21 +19,27 @@
         <ul class="right">
   {% if user.is_authenticated %}
     <li><a href="{% url 'about' %}">About</a></li>
-    <li><a href="{% url 'funko_index' %}">View Collection</a></li>
+    <li><a href="{% url 'funko_index' %}">View Funko Library</a></li>
     <li><a href="{% url 'funko_create' %}">Add a Funko</a></li>
+    <li><a href="{% url 'collection' %}">My Collection</a></li>
+    <li><a href="{% url 'wishlist' %}">My Wishlist</a></li>
     <li><a href="{% url 'profile' %}">My Profile</a></li> 
     <li><a href="{% url 'logout' %}">Log Out</a></li>
+    
   {% else %}
     <li><a href="{% url 'login' %}">Log In</a></li>
     <li><a href="{% url 'signup' %}">Sign Up</a></li>
     <li><a href="{% url 'about' %}">About</a></li>
-    <li><a href="{% url 'funko_index' %}">View Collection</a></li>
+    <li><a href="{% url 'funko_index' %}">View Funko Library</a></li>
   {% endif %}
         </ul>
       </div>
     </nav>
   </header>
+  <img id='funk' src="/static/funko.png" alt="">
   <main class="container">
+  
+    
     {% block content %}
     {% endblock %}
   </main>
