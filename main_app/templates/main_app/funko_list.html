@@ -34,7 +34,7 @@
 
     {% if page_obj.has_next %}
     <li><a href = "?page={{page_obj.next_page_number}}">NEXT</a></li>
-    <li><a href = "?page={{page_obj.paginator.num_pages}}">LAST</a></li>
+    <li><a href = "?page={{page_obj.paginator.num_pages}}">&raquo; LAST</a></li>
     {%endif%}
 </ul>
 {% endblock %}
