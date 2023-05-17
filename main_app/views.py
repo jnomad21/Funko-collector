@@ -5,6 +5,7 @@ from .models import Funko, Profile
 from django.views.generic import ListView, UpdateView, CreateView, DeleteView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.core.paginator import Paginator
 
 # Create your views here.
 def home(request):
@@ -13,6 +14,7 @@ def about(request):
   return render(request, 'about.html')
 class FunkoList(ListView):
   model= Funko
+  paginate_by = 4
 class FunkoCreate(CreateView):
   model= Funko
   fields= ['name', 'association', 'series', 'number', 'image']
