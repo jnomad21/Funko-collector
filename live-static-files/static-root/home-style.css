@@ -1,0 +1,38 @@
+#home-pic{
+    width:100vw;
+}
+body{
+    text-align: center;
+}
+
+.wrapper.two {
+    background-color: #fff;
+    font-size: 6rem;
+    font-family: "Play", sans-serif;
+}
+.neon h3 {
+    margin: 1rem auto;
+    animation: neon 3s ease infinite;
+}
+@keyframes neon {
+    0%,
+    100% {
+        text-shadow: 0 0 10px #d4e81ea8, 0 0 20px #c64c0ba8, 0 0 20px #11a154a8, 0 0 20px #290a88a8, 0 0 2px #fed128, 2px 2px 2px #806914;
+        color: #fff;
+    }
+    50% {
+        text-shadow: 0 0 2px #023614, 0 0 5px #a39e9e, 0 0 5px #0b0540, 0 0 5px #d2f21e, 0 0 2px #300426, 4px 4px 2px #40340a;
+        color: lightskyblue;
+    }
+}
+button{
+    width: 200px;
+    height: 60px;
+    background-color: lightskyblue;
+    color: white;
+
+}
+button a{
+    width: 200px;
+    height: 60px;
+}

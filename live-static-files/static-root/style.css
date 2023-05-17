@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+  main {
+    flex: 1 0 auto;
+  }
+  
+  footer.page-footer {
+    padding-top: 0;
+    text-align: right;
+  }
+.alpha{
+  display:inline;
+}
+#funk{
+  position:absolute;
+  z-index: -1;
+  width: 82%;
+  background-position: center;
+  opacity: 18%;
+  left: 10%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.card{
+  opacity: 80%;
+  
+}
+.card-content p{
+  color: black;
+}
+header .nav-wrapper{
+  background-color: lightskyblue;
+}
+.navbar-fixed{
+  color: lightskyblue;
+}
+h1{
+  color: lightskyblue
+}
+.page-footer{
+  background-color: lightskyblue;
+
+}
+.btn{
+  background-color: lightskyblue;
+  
+}
+h5{
+  color: lightskyblue;
+}
+.card .card-title{
+  color: lightskyblue;
+  text-emphasis: bold;
+  font-size: 30px;
+}
+.detail-image{
+  width: 40%;
+  height: auto;
+}
+tr th label{
+  background-color: lightskyblue;
+  color: white;
+  padding: 15px;
+}
+tr th {
+  width: 150px;
+}
