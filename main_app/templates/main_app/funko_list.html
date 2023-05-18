@@ -20,13 +20,13 @@
     <div class = "col s1" class = "right-align"><img src="{{funko.image}}" alt="" width="170" 
     height="170">
     </div>
-</div> 
+</div>
+</a> 
 
 {% endfor %}
-<div>
+<div class="center-align">
   Page {{page_obj.number}} of {{page_obj.paginator.num_pages}}
-</div>
-<ul style ="margin-left:10px;" class="pagination">
+<ul >
     {% if page_obj.has_previous %}
     <li><a href = "?page=1">&laquo; FIRST</a></li>
     <li><a href = "?page={{page_obj.previous_page_number}}">PREVIOUS</a></li>
@@ -34,7 +34,8 @@
 
     {% if page_obj.has_next %}
     <li><a href = "?page={{page_obj.next_page_number}}">NEXT</a></li>
-    <li><a href = "?page={{page_obj.paginator.num_pages}}">&raquo; LAST</a></li>
+    <li><a href = "?page={{page_obj.paginator.num_pages}}">LAST &raquo;</a></li>
     {%endif%}
 </ul>
+</div>
 {% endblock %}
