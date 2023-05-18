@@ -12,22 +12,7 @@ body {
     padding-top: 0;
     text-align: right;
   }
-.alpha {
-  display:flex;
-  flex-direction: column;
-  height: 250px;
-  justify-content: flex-end;
-  vertical-align: baseline;
-  
-}
-.alpha a{
-  max-width: 170px;
-  padding: 20px 20px 0 20px;
-  text-align: center;
-  vertical-align: baseline;
 
-  
-}
 #funk{
   position:absolute;
   z-index: -1;
@@ -99,16 +84,40 @@ tr th {
 }
 .bravo{
   display: flex;
+  max-width: 80vw;
+  flex-wrap: wrap;
+}
+.alpha {
+  display:flex;
+  flex-direction: column;
+  height: 250px;
+  justify-content: flex-end;
+  
+  
+}
+.alpha a{
+  max-width: 170px;
+  padding: 20px 20px 0 20px;
+  text-align: center;
+
 }
 .alpha img{
   width: 140px;
-  height: 170px;
+  height: auto;
   justify-content: end;
+  padding-bottom: 10px;
+  min-height: 150px;
 
+}
+.alpha p{
+  vertical-align: text-top;
+  text-align: center;
+  padding-top: 5px;
+  width: 155px;
+  min-height: 50px;
 }
 .kappa {
   display: grid;
-  grid-template-rows: 1fr 1fr;
   align-items: end;
   padding: 0 20px 0 20px;
 }
