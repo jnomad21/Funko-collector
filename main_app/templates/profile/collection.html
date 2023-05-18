@@ -17,5 +17,19 @@
     </div>
 
 {%endfor%}
-</section> 
+</section>
+<div class ='pages'> 
+    <p>Page {{page_obj.number}} of {{page_obj.paginator.num_pages}}</p>
+    <ul class='pages'>
+      {% if page_obj.has_previous %}
+      <li class='pages'><a href = "?page=1">&laquo; FIRST</a></li>
+      <li class='pages'><a href = "?page={{page_obj.previous_page_number}}">PREVIOUS</a></li>
+      {% endif %}
+  
+      {% if page_obj.has_next %}
+      <li class='pages'><a href = "?page={{page_obj.next_page_number}}">NEXT</a></li>
+      <li class='pages'><a href = "?page={{page_obj.paginator.num_pages}}">LAST &raquo;</a></li>
+      {%endif%}
+    </ul>
+  </div>
 {% endblock %}

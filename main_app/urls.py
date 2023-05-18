@@ -13,7 +13,7 @@ urlpatterns = [
     path('funko/<int:funko_id>/add_to_collection/<int:profile_id>/', views.add_to_collection, name='add_to_collection'),
     path('funko/<int:funko_id>/add_to_wishlist/<int:profile_id>/', views.add_to_wishlist, name='add_to_wishlist'),
     path('profile/', views.profile, name="profile"),
-    path('profile/collection', views.profile_collection, name="collection"),
-    path('profile/wishlist', views.profile_wishlist, name="wishlist")
+    path('profile/collection', views.CollectionList.as_view(), name="collection"),
+    path('profile/wishlist', views.WishList.as_view(), name="wishlist")
     # path('funko/<int:pk>/add_review/', views.add_review, name='add_review')
 ]
