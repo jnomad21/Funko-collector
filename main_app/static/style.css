@@ -15,11 +15,15 @@ body {
 .alpha {
   display:flex;
   flex-direction: column;
+  height: 300px;
+  justify-content: flex-end;
+  
 }
 .alpha a{
   max-width: 170px;
   padding: 20px;
   text-align: center;
+  
 }
 #funk{
   position:absolute;
@@ -93,8 +97,11 @@ tr th {
 .bravo{
   display: flex;
 }
-.bravo .alpha img{
-  bottom: 0;
+.alpha img{
+  width: 140px;
+  height: auto;
+  justify-content: end;
+
 }
 .kappa {
   display: grid;
