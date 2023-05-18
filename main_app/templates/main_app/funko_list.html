@@ -1,9 +1,18 @@
 {% extends 'base.html' %}
+{% load bootstrap %}
 {% block content %}
 
 <h1>Funko Collection</h1>
 
-{% for funko in funko_list %}
+<div class="container">
+  <form method="GET">
+{{filter.form|bootstrap}}
+<button type ="submit" class= "btn btn-primary">Filter</button>
+
+  </form>
+</div>
+
+{% for funko in filter.qs %}
 <div class="row">
   <div class="col s11">
     <div class="card">

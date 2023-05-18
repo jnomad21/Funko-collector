@@ -1,4 +1,5 @@
 import json
+from typing import Any, Dict
 from django.shortcuts import render, redirect
 from .models import Funko, Profile
 # from .forms import ReviewForm
@@ -6,6 +7,8 @@ from django.views.generic import ListView, UpdateView, CreateView, DeleteView, D
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.core.paginator import Paginator
+from .filters import FunkoFilter
+
 
 # Create your views here.
 def home(request):
@@ -15,6 +18,12 @@ def about(request):
 class FunkoList(ListView):
   model= Funko
   paginate_by = 4
+  myFilter= FunkoFilter()
+
+  def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+    context['filter'] = FunkoFilter(self.request.GET, queryset=self.get_queryset())
+    return context
 class FunkoCreate(CreateView):
   model= Funko
   fields= ['name', 'association', 'series', 'number', 'image']
