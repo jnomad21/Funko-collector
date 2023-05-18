@@ -2,13 +2,12 @@
 {% load bootstrap %}
 {% block content %}
 
-<h1>Funko Collection</h1>
+<h1>Funko Library</h1>
 
-<div class="container">
+<div class = "omega">
   <form method="GET">
-{{filter.form|bootstrap}}
-<button type ="submit" class= "btn btn-primary">Filter</button>
-
+    {{filter.form|bootstrap}}
+      <button type ="submit" class= "btn btn-primary">Search</button>
   </form>
 </div>
 

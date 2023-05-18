@@ -1,9 +1,37 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>About the Funko Collector App</h1>
+<h1>What in the Funk?!-O</h1>
 <hr>
-<p>funko Funko FUNKO</p>
-<footer>All Rights Reserved, &copy; 2023 Funko Collector</footer>
+<section id='about'>
+    <div class="div1">
+    <h2 >How it started</h2>
+        <div class="row">
+            <div class="col m6">
+                <div class="card">
+                    <p class= "about-text">In 1998, Mike Becker founded a bobblehead company out of his garage called Wacky Wobblers, and the Big Boy (the coiffed, raven-haired mascot for the Bob’s Big Boy restaurant chain) bobblehead was the first to join the line-up.</p>
+                </div>
+            </div>
+            <div class="col m6">
+                <img id='bob' src="/static/bob.png" alt="">
+            </div>
+        </div>
+    </div>
+<div class="div2">
+    <div class="row">
+        <div class="col m6">
+            <img id='gold' src="/static/Funko-gold.png" alt="">
+        </div>
+        <div class="col m6">
+            <h2>Where it's at</h2>
+            <div class="card">
+                <p class="about-text">As of January 2023, the total number of Funko Pops is <strong>8,366</strong>.  <br><br>
+                    Funko, Inc's revenue is roughly <strong> $1.3 BILLION</strong> annually. <br><br>
+                    The most expensive Funko ever sold at a price of <strong>$100,000!</strong> 
+            </div>
+        </div>
+    </div>
+</div>
+</section>
 
 {% endblock %}

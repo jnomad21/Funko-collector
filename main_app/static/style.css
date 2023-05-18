@@ -138,3 +138,52 @@ tr th {
   margin-top: -120px;
   margin-left: -140px;
 }
+.omega{
+  display: flex;
+  margin-left: 6vw;
+}
+.omega form{
+  display: flex;
+
+}
+.omega form div{
+  display: inline;
+  padding: 0 20px 0 20px;
+  text-align: center;
+}
+.omega form div label{
+text-align: center;
+font-size: 16px;
+color: black;
+}
+.omega form div input[type=text] {
+  border: solid 1px black;
+  width: 160px;
+  height: 30px;
+  background-color: rgb(245, 243, 243);
+}
+#bob{
+  width: 600px;
+  margin-top: -170px;
+}
+.about-text{
+  font-size: 16px;
+}
+#about .card{
+  padding: 25px;
+}
+#about .div1{
+  position:relative;
+  bottom: -40%;
+}
+#about .div2{
+  position:relative;
+  top: -8vh
+}
+#about{
+  position: relative;
+}
+#gold{
+  width: 27vw;
+  margin-top: 50px;
+}

@@ -8,3 +8,4 @@ class FunkoFilter(django_filters.FilterSet):
             'name': ['icontains'],
             'series': ['icontains']
         }
+        
