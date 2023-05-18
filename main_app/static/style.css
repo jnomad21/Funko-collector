@@ -70,3 +70,17 @@ tr th label{
 tr th {
   width: 150px;
 }
+.pages p{
+  justify-content: center;
+  display: flex;
+  text-align: center;
+}
+.pages ul{
+  justify-content: center;
+  display: flex;
+  
+}
+.pages li{
+  display:inline;
+  padding:20px;
+}
