@@ -12,8 +12,14 @@ body {
     padding-top: 0;
     text-align: right;
   }
-.alpha{
-  display:inline;
+.alpha {
+  display:flex;
+  flex-direction: column;
+}
+.alpha a{
+  max-width: 170px;
+  padding: 20px;
+  text-align: center;
 }
 #funk{
   position:absolute;
@@ -83,4 +89,16 @@ tr th {
 .pages li{
   display:inline;
   padding:20px;
+}
+.bravo{
+  display: flex;
+}
+.bravo .alpha img{
+  bottom: 0;
+}
+.kappa {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  align-items: end;
+  padding: 0 20px 0 20px;
 }

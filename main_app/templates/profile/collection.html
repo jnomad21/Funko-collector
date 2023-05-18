@@ -3,17 +3,19 @@
 
 <h1>My Collection</h1>
 
- 
+<section class="bravo">
 {%for funko in user.profile.collection.all%} 
-<div class="row" >
-    <div class="col s2" class = "alpha">
-        <div class="cards">
-            <a href="{% url 'funko_detail' funko.id %}">{{funko.name}}
-                <a href="{% url 'funko_detail' funko.id %}"><img src="{{funko.image}}" alt=""width="170" height="170">
-        </div>
-    </div> 
-</div>
+    <div class="kappa">
+        <div >
+            <div class="cards">
+                <div class="alpha">
+                <a href="{% url 'funko_detail' funko.id %}">{{funko.name}}</a>
+                <a href="{% url 'funko_detail' funko.id %}"><img src="{{funko.image}}" alt=""width="170" height="170"></a>
+                </div>
+            </div>
+        </div> 
+    </div>
 
 {%endfor%}
-
+</section> 
 {% endblock %}
