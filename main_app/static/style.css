@@ -15,14 +15,17 @@ body {
 .alpha {
   display:flex;
   flex-direction: column;
-  height: 300px;
+  height: 250px;
   justify-content: flex-end;
+  vertical-align: baseline;
   
 }
 .alpha a{
   max-width: 170px;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
   text-align: center;
+  vertical-align: baseline;
+
   
 }
 #funk{
