@@ -8,6 +8,8 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.core.paginator import Paginator
 from .filters import FunkoFilter
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 
@@ -25,7 +27,7 @@ class FunkoList(ListView):
     context['filter'] = FunkoFilter(self.request.GET, queryset=self.get_queryset())
     # print(context)
     return context
-class FunkoCreate(CreateView):
+class FunkoCreate(LoginRequiredMixin,CreateView):
   model= Funko
   fields= ['name', 'association', 'series', 'number', 'image']
   def form_valid(self, form):
@@ -33,10 +35,10 @@ class FunkoCreate(CreateView):
     form.instance.user = self.request.user  # form.instance is the cat
     # Let the CreateView do its job as usual
     return super().form_valid(form)
-class FunkoUpdate(UpdateView):
+class FunkoUpdate(LoginRequiredMixin,UpdateView):
   model= Funko
   fields= '__all__'
-class FunkoDelete(DeleteView):
+class FunkoDelete(LoginRequiredMixin,DeleteView):
   model=Funko
   success_url='/funko/'
 class FunkoDetail(DetailView):
@@ -65,21 +67,21 @@ def signup(request):
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
-
+@login_required
 def add_to_collection(request, funko_id, profile_id):
   Profile.objects.get(id=profile_id).collection.add(funko_id)
   return redirect('/funko/', funko_id, profile_id,)
-
+@login_required
 def add_to_wishlist(request, funko_id, profile_id):
   Profile.objects.get(id=profile_id).wishlist.add(funko_id)
   return redirect('/funko/', funko_id, profile_id,)
 
-class CollectionList(ListView):
+class CollectionList(LoginRequiredMixin,ListView):
   model = Funko
   template_name = 'profile/collection.html'
   paginate_by=10
 
-class WishList(ListView):
+class WishList(LoginRequiredMixin,ListView):
   model = Funko
   template_name = 'profile/wishlist.html'
   paginate_by=10
