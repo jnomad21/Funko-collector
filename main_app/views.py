@@ -10,6 +10,7 @@ from django.core.paginator import Paginator
 from .filters import FunkoFilter
 
 
+
 # Create your views here.
 def home(request):
   return render(request, 'home.html')
@@ -22,6 +23,7 @@ class FunkoList(ListView):
   def get_context_data(self, **kwargs):
     context = super().get_context_data(**kwargs)
     context['filter'] = FunkoFilter(self.request.GET, queryset=self.get_queryset())
+    # print(context)
     return context
 class FunkoCreate(CreateView):
   model= Funko
