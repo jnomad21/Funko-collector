@@ -18,7 +18,6 @@ def about(request):
 class FunkoList(ListView):
   model= Funko
   paginate_by = 4
-  myFilter= FunkoFilter()
 
   def get_context_data(self, **kwargs):
     context = super().get_context_data(**kwargs)
